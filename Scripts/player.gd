@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var star_power_scene = preload("res://Scenes/star_power.tscn")
 signal bullet_spawned(bullet_instance)
 var shoot_timeout = true
-var speed = 300
+var speed = 20
 var velocity_vector = Vector2(1, 0)
 var max_speed = 200
 var stopped_thrusting = false
