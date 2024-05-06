@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvayaqm8dkijh"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_wjnd4"]
+[ext_resource type="PackedScene" uid="uid://dtbgpg7ufx8p2" path="res://Scenes/hud.tscn" id="2_pigks"]
+[ext_resource type="PackedScene" uid="uid://btp58hlwe66dq" path="res://Scenes/player.tscn" id="2_tsu1i"]
+[ext_resource type="PackedScene" uid="uid://dfgdvmqmsit8j" path="res://Scenes/bg.tscn" id="4_lpnn4"]
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_wjnd4")
+
+[node name="HUD" parent="." instance=ExtResource("2_pigks")]
+
+[node name="player" parent="." instance=ExtResource("2_tsu1i")]
+
+[node name="Asteroids" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="spawn_positions" type="Node" parent="."]
+
+[node name="pos1" type="Marker2D" parent="spawn_positions"]
+position = Vector2(-56, 302)
+
+[node name="pos2" type="Marker2D" parent="spawn_positions"]
+position = Vector2(1970, 614)
+
+[node name="pos3" type="Marker2D" parent="spawn_positions"]
+position = Vector2(493, 972)
+
+[node name="pos4" type="Marker2D" parent="spawn_positions"]
+position = Vector2(1319, -92)
+
+[node name="bg" parent="." instance=ExtResource("4_lpnn4")]
+
+[connection signal="bullet_spawned" from="player" to="." method="_on_player_bullet_spawned"]
+[connection signal="star_power_spawned" from="player" to="." method="_on_player_star_power_spawned"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

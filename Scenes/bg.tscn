@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfgdvmqmsit8j"]
+
+[ext_resource type="Texture2D" uid="uid://cbemh4ad2ib3x" path="res://Assets/BackdropBlackLittleSparkBlack.png" id="1_k2ufg"]
+
+[node name="bg" type="ParallaxBackground"]
+
+[node name="BackdropBlackLittleSparkBlack" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(960, 450)
+texture = ExtResource("1_k2ufg")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 900)
