@@ -16,6 +16,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_player_bullet_spawned(bullet_instance) -> void:
 	add_child(bullet_instance)
+    # comment for giggles
 	bullet_instance.global_position = player.global_position
 	
 func spawn_large_asteroid():
